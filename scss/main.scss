@@ -27,7 +27,7 @@ header{
     h3{
         font-size: 2rem;   
     }
-
+    // instead of write .section just write &-
     &-a {
         background: $primary-color;
         color: #fff;
@@ -39,9 +39,25 @@ header{
 
 }
 
-a{
-    color: #333;
-    &:hover{
-        color:coral
+%btn-shared{
+    display: inline-block;
+    padding: 0.5rem 3rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.btn{
+    &-light{
+        @extend %btn-shared;
+        background-color: $light-color;;
+        color: #333;
+    }
+
+    &-dark{
+        @extend %btn-shared;
+        background-color: $dark-color;
+        color: #fff;
     }
 }
