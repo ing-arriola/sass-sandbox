@@ -53,11 +53,19 @@ header{
         @extend %btn-shared;
         background-color: $light-color;;
         color: set-text-color($light-color );
+        &:hover{
+            @include transform(rotate(20deg));
+            background-color: darken($color: $light-color, $amount: 10%);
+        }
     }
 
     &-dark{
         @extend %btn-shared;
         background-color: $dark-color;
         color: set-text-color($dark-color );
+        &:hover{
+            @include transform(rotate(-20deg));
+            background-color: darken($color: $dark-color, $amount: 10%);
+        }
     }
 }
